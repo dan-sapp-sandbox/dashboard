@@ -1,14 +1,26 @@
-import "./App.css";
-import Graph from "./components/Graph";
+import ScatterPlot from "./components/ScatterPlot";
+import AreaChart from "./components/AreaChart";
+import Card from "./components/Card";
 
 function App() {
   return (
     <div>
-      <div className="text-zinc-200 text-4xl">
+      <div className="text-zinc-200 text-4xl mb-16">
         Sapp Bros Dashboard
       </div>
-      <div id="graph-wrapper" className="flex justify-center items-center">
-        <Graph />
+      <div className="grid grid-cols-12 gap-6">
+        <Card>
+          <ScatterPlot />
+        </Card>
+        <Card>
+          <AreaChart />
+        </Card>
+        <Card>
+          <AreaChart />
+        </Card>
+        <Card>
+          <ScatterPlot />
+        </Card>
       </div>
     </div>
   );
