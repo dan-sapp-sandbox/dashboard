@@ -1,28 +1,28 @@
-import ScatterPlot from "./components/ScatterPlot";
+// import ScatterPlot from "./components/ScatterPlot";
 import AreaChart from "./components/AreaChart";
 import Card from "./components/Card";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  // uri: "http://127.0.0.1:8000/graphql",
+  uri: "https://dashboard-api-xi.vercel.app/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div>
-      <div className="text-zinc-200 text-4xl mb-16">
-        Sapp Bros Dashboard
+    <ApolloProvider client={client}>
+      <div>
+        <div className="">
+          {/* <Card>
+            <ScatterPlot />
+          </Card> */}
+          <Card>
+            <AreaChart />
+          </Card>
+        </div>
       </div>
-      <div className="grid grid-cols-12 gap-6">
-        <Card>
-          <ScatterPlot />
-        </Card>
-        <Card>
-          <AreaChart />
-        </Card>
-        <Card>
-          <AreaChart />
-        </Card>
-        <Card>
-          <ScatterPlot />
-        </Card>
-      </div>
-    </div>
+    </ApolloProvider>
   );
 }
 

@@ -4,7 +4,7 @@ interface Props {
 
 const Card = ({ children }: Props) => {
   return (
-    <div className="bg-zinc-500 col-span-6 rounded-xl p-1">
+    <div className="bg-zinc-500 rounded-xl p-1 flex justify-center w-fit mx-auto">
       {children}
     </div>
   );
