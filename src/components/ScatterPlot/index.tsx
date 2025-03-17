@@ -13,7 +13,7 @@ const GET_SCATTERPLOT_DATA = gql`
 `;
 
 const ScatterPlot: React.FC = () => {
-  const { data, loading, error } = useQuery(GET_SCATTERPLOT_DATA);
+  const { data, loading } = useQuery(GET_SCATTERPLOT_DATA);
   const svgRef = useRef<SVGSVGElement>(null);
   const width = 800;
   const height = 500;
